@@ -1,0 +1,5 @@
+.pio
+.vscode
+build
+sdkconfig
+sdkconfig.dfrobot_firebeetle2_esp32c6
