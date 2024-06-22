@@ -112,9 +112,9 @@ static void blink() {
 *
 * @return esp_err_t Returns ESP_OK on success, otherwise an error code indicating the cause of failure
 *
-* @note This function assumes that the sensor number is encoded on three GPIO pins, SENSOR_NR_0, SENSOR_NR_1, and SENSOR_NR_2.
-  The sensor number is encoded as a 3-bit binary value, with the least significant bit on SENSOR_NR_0 and the most
-  significant bit on SENSOR_NR_2.
+* @note This function assumes that the sensor number is encoded on three GPIO pins, SENSOR_NR_0 and SENSOR_NR_1.
+  The sensor number is encoded as a 2-bit binary value, with the least significant bit on SENSOR_NR_0 and the most
+  significant bit on SENSOR_NR_1.
 */
 static esp_err_t get_sensor_number(uint8_t *nr) 
 {
@@ -518,7 +518,6 @@ void app_main(){
     // ------- Read DIP switch value -------
     uint8_t sensor_nr;    
     ret = get_sensor_number(&sensor_nr);
-    sensor_nr = 2;
     ESP_LOGI(TAG, "sensor: %d", sensor_nr);
 
     // ------- Read voltage value -------
